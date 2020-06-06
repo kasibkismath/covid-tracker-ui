@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text"><em>COVID 19 tracker built to track COVID 19 status in Sri Lanka.</em></p>
+        <div class="card-group">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">New Cases</h5>
+              <p class="card-text">{{newCases}}</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Cumulative Count</h5>
+              <p class="card-text">{{cumulativeCount}}</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Recoveries</h5>
+              <p class="card-text">{{recoveries}}</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Mortality</h5>
+              <p class="card-text">{{mortality}}</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Currently Infected</h5>
+              <p class="card-text">{{currenlyInfected}}</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Under Observation</h5>
+              <p class="card-text">{{underObservation}}</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">PCR Tests For Today</h5>
+              <p class="card-text">{{pcrToday}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated on {{lastUpdatedOn}}</small>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6" [hidden]="isLoaded">
+  <h6 class="info">Loading Chart.... Please check your internet connection</h6>
+</div>
+<div class="row justify-content-center" [hidden]="!isLoaded">
+  <div class="col-sm-4">
+    <div id="chartContainer"></div>
+  </div>
+</div>
